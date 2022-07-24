@@ -7,6 +7,10 @@
         <variable
             name="startFragment"
             type="com.levox.shoppinglist.fragments.StartFragment" />
+
+        <variable
+            name="viewModel"
+            type="com.levox.shoppinglist.model.ListViewModel" />
     </data>
 
     <FrameLayout
@@ -22,6 +26,18 @@
                 android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btn_clear_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_delete"
+                app:layout_constraintTop_toTopOf="@+id/btn_add_item_to_list"
+                app:layout_constraintEnd_toStartOf="@+id/btn_add_item_to_list"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_add_item_to_list"
+                android:layout_marginEnd="16dp"
+                android:onClick="@{() -> viewModel.clearList()}"/>
+
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/btn_add_item_to_list"

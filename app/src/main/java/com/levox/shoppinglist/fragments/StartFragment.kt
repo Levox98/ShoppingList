@@ -49,4 +49,8 @@ class StartFragment : Fragment() {
         findNavController().navigate(R.id.action_startFragment_to_chooseCategoryFragment)
     }
 
+    private fun clearList() {
+        sharedViewModel.clearList()
+        binding.recyclerView
+    }
 }
