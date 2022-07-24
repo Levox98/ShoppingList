@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.levox.shoppinglist.fragments.StartFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment_to_chooseCategoryFragment"
+            app:destination="@id/chooseCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addItemFragment"
+        android:name="com.levox.shoppinglist.fragments.AddItemFragment"
+        android:label="@string/add_new_item"
+        tools:layout="@layout/fragment_add_item" />
+    <fragment
+        android:id="@+id/chooseCategoryFragment"
+        android:name="com.levox.shoppinglist.fragments.ChooseCategoryFragment"
+        android:label="@string/choose_category"
+        tools:layout="@layout/fragment_choose_category">
+        <action
+            android:id="@+id/action_chooseCategoryFragment_to_addItemFragment"
+            app:destination="@id/addItemFragment" />
+    </fragment>
+</navigation>
