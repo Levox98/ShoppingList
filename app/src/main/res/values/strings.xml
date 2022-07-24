@@ -11,4 +11,7 @@
     <string name="name_1">Jepa</string>
     <string name="name_2">Kukold</string>
     <string name="name_3">Mandarinka</string>
+
+    <string name="model">MODEL</string>
+    <string name="recycler_view">RECYCLER_VIEW</string>
 </resources>

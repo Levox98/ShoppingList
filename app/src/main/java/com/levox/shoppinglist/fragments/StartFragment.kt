@@ -5,18 +5,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ScrollView
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.levox.shoppinglist.R
 import com.levox.shoppinglist.adapter.ItemAdapter
-import com.levox.shoppinglist.data.DataSource
 import com.levox.shoppinglist.databinding.FragmentStartBinding
+import com.levox.shoppinglist.model.ListViewModel
 
 class StartFragment : Fragment() {
 
     private lateinit var binding: FragmentStartBinding
-    private lateinit var recyclerView: RecyclerView
+
+    val sharedViewModel: ListViewModel by activityViewModels()
 
 
     override fun onCreateView(
@@ -36,9 +39,9 @@ class StartFragment : Fragment() {
             startFragment = this@StartFragment
         }
 
-        recyclerView.apply {
-            layoutManager = LinearLayoutManager(requireActivity())
-            adapter = ItemAdapter(DataSource.itemList)
+        binding.recyclerView.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = ItemAdapter(sharedViewModel)
         }
     }
 

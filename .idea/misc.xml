@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/GitHub/ShoppingList/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/GitHub/ShoppingList/app/src/main/res/layout/fragment_choose_category.xml" value="0.358695652173913" />
+        <entry key="..\:/GitHub/ShoppingList/app/src/main/res/layout/fragment_start.xml" value="0.358695652173913" />
+        <entry key="..\:/GitHub/ShoppingList/app/src/main/res/layout/item_layout.xml" value="0.358695652173913" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18568840579710144" />
         <entry key="app/src/main/res/layout/fragment_add_item.xml" value="0.18568840579710144" />
         <entry key="app/src/main/res/layout/fragment_choose_category.xml" value="0.22536736087522644" />

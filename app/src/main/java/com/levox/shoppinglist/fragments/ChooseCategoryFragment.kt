@@ -5,12 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import com.levox.shoppinglist.R
+import com.levox.shoppinglist.data.DataSource
 import com.levox.shoppinglist.databinding.FragmentChooseCategoryBinding
+import com.levox.shoppinglist.model.Item
+import com.levox.shoppinglist.model.ListViewModel
 
 
 class ChooseCategoryFragment : Fragment() {
 
-    private lateinit var binding: FragmentChooseCategoryBinding
+    private var binding: FragmentChooseCategoryBinding? = null
+
+    val sharedViewModel: ListViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,6 +33,22 @@ class ChooseCategoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding?.apply {
+            lifecycleOwner = viewLifecycleOwner
+            chooseCategoryFragment = this@ChooseCategoryFragment
+            viewModel = sharedViewModel
+            dataSource = DataSource
+        }
+
     }
 
+    fun addItemToList(item: Item) {
+        sharedViewModel.addItemToList(item)
+
+        goToStart()
+    }
+
+    private fun goToStart() {
+        findNavController().navigate(R.id.action_chooseCategoryFragment_to_startFragment)
+    }
 }

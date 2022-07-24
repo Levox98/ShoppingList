@@ -1,7 +1,6 @@
 package com.levox.shoppinglist.adapter
 
-
-import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,27 +8,33 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.levox.shoppinglist.R
 import com.levox.shoppinglist.model.Item
+import com.levox.shoppinglist.model.ListViewModel
 
-class ItemAdapter(val listOfItems: Array<Item>) : RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
+class ItemAdapter(viewModel: ListViewModel) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    private val model = viewModel
 
-        val tvItemName = view.findViewById<TextView>(R.id.item_name)
+    class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+
+        val tvName = view.findViewById<TextView>(R.id.item_name)
 
         fun bind(item: Item) {
-            tvItemName.text = item.name
+            tvName.text = item.name
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_layout, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
+        Log.d("RECYCLER_VIEW", "ViewHolderCreated")
+        return ItemViewHolder(LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_layout, parent, false))
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(listOfItems[position])
+    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
+        Log.d("RECYCLER_VIEW", "ViewHolderCreated")
+        holder.bind(model.listOfItems[position])
     }
 
     override fun getItemCount(): Int {
-        return listOfItems.size
+        return model.listOfItems.size
     }
 }

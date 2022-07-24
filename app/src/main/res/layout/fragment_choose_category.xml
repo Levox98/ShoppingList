@@ -1,35 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.ChooseCategoryFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+        <variable
+            name="viewModel"
+            type="com.levox.shoppinglist.model.ListViewModel" />
+
+        <variable
+            name="chooseCategoryFragment"
+            type="com.levox.shoppinglist.fragments.ChooseCategoryFragment" />
+
+        <variable
+            name="dataSource"
+            type="com.levox.shoppinglist.data.DataSource" />
+    </data>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp">
+        tools:context=".fragments.ChooseCategoryFragment">
 
-        <Button
-            android:id="@+id/btn_test_category"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btn_test_category_2"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginEnd="16dp"
-            android:text="Test category 1"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
 
-        <Button
-            android:id="@+id/btn_test_category_2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/btn_test_category"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/btn_test_category"
-            app:layout_constraintBottom_toBottomOf="@+id/btn_test_category"
-            android:text="Test category 2"/>
+            <Button
+                android:id="@+id/btn_test_category"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_test_category_2"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="16dp"
+                android:text="Add item"
+                android:onClick="@{() -> chooseCategoryFragment.addItemToList(dataSource.itemList[0])}"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</FrameLayout>
+            <Button
+                android:id="@+id/btn_test_category_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/btn_test_category"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/btn_test_category"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_test_category"
+                android:text="Add item"
+                android:onClick="@{() -> chooseCategoryFragment.addItemToList(dataSource.itemList[1])}"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>
