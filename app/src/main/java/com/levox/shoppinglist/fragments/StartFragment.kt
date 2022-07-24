@@ -5,13 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ScrollView
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.levox.shoppinglist.R
-import com.levox.shoppinglist.adapter.ItemAdapter
+import com.levox.shoppinglist.adapters.ItemAdapter
 import com.levox.shoppinglist.databinding.FragmentStartBinding
 import com.levox.shoppinglist.model.ListViewModel
 
@@ -19,13 +18,13 @@ class StartFragment : Fragment() {
 
     private lateinit var binding: FragmentStartBinding
 
-    val sharedViewModel: ListViewModel by activityViewModels()
+    private val sharedViewModel: ListViewModel by activityViewModels()
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val fragmentBinding = FragmentStartBinding.inflate(inflater, container, false)
         binding = fragmentBinding
         return fragmentBinding.root
@@ -39,9 +38,15 @@ class StartFragment : Fragment() {
             startFragment = this@StartFragment
         }
 
+        val itemAdapter = ItemAdapter(sharedViewModel)
+
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(requireContext())
-            adapter = ItemAdapter(sharedViewModel)
+            adapter = itemAdapter
+        }
+
+        binding.btnClearList.setOnClickListener {
+            clearList(itemAdapter)
         }
     }
 
@@ -49,8 +54,10 @@ class StartFragment : Fragment() {
         findNavController().navigate(R.id.action_startFragment_to_chooseCategoryFragment)
     }
 
-    private fun clearList() {
+    private fun clearList(adapter: ItemAdapter) {
         sharedViewModel.clearList()
-        binding.recyclerView
+        adapter.clearData()
+
+        Toast.makeText(requireContext(), "Список очищен", Toast.LENGTH_SHORT).show()
     }
 }

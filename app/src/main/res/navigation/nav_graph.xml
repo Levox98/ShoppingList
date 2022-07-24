@@ -18,7 +18,16 @@
         android:id="@+id/addItemFragment"
         android:name="com.levox.shoppinglist.fragments.AddItemFragment"
         android:label="@string/add_new_item"
-        tools:layout="@layout/fragment_add_item" />
+        tools:layout="@layout/fragment_add_item" >
+        <action
+            android:id="@+id/action_addItemFragment_to_startFragment"
+            app:destination="@id/startFragment"
+            app:popUpTo="@id/startFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="Category"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/chooseCategoryFragment"
         android:name="com.levox.shoppinglist.fragments.ChooseCategoryFragment"

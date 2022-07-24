@@ -35,8 +35,8 @@
                 app:layout_constraintEnd_toStartOf="@id/btn_test_category_2"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginEnd="16dp"
-                android:text="Add item"
-                android:onClick="@{() -> chooseCategoryFragment.addItemToList(dataSource.itemList[0])}"/>
+                android:text="Жопки"
+                android:onClick='@{() -> chooseCategoryFragment.chooseCategory("Жопки")}'/>
 
             <Button
                 android:id="@+id/btn_test_category_2"
@@ -46,8 +46,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/btn_test_category"
                 app:layout_constraintBottom_toBottomOf="@+id/btn_test_category"
-                android:text="Add item"
-                android:onClick="@{() -> chooseCategoryFragment.addItemToList(dataSource.itemList[1])}"/>
+                android:text="Пипки"
+                android:onClick='@{() -> chooseCategoryFragment.chooseCategory("Пипки")}'/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>

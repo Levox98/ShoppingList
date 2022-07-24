@@ -18,13 +18,13 @@ class ChooseCategoryFragment : Fragment() {
 
     private var binding: FragmentChooseCategoryBinding? = null
 
-    val sharedViewModel: ListViewModel by activityViewModels()
+    private val sharedViewModel: ListViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val fragmentBinding = FragmentChooseCategoryBinding.inflate(inflater, container, false)
         binding = fragmentBinding
         return fragmentBinding.root
@@ -42,10 +42,11 @@ class ChooseCategoryFragment : Fragment() {
 
     }
 
-    fun addItemToList(item: Item) {
-        sharedViewModel.addItemToList(item)
+    fun chooseCategory(category: String) {
+        val action = ChooseCategoryFragmentDirections
+            .actionChooseCategoryFragmentToAddItemFragment(category)
 
-        goToStart()
+        findNavController().navigate(action)
     }
 
     private fun goToStart() {

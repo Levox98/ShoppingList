@@ -4,7 +4,8 @@
     style="?attr/cardViewStyle"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:backgroundTint="#009688">
+    android:backgroundTint="#B8C3C2"
+    android:layout_marginVertical="4dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,7 +43,8 @@
             android:id="@+id/item_checkbox"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="2" />
+            android:layout_weight="2"
+            android:checked="false" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/item_delete"
@@ -50,7 +52,8 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_weight="5"
-            android:src="@drawable/ic_delete" />
+            android:src="@drawable/ic_delete"
+            android:contentDescription="@string/delete_item_from_list"/>
 
     </LinearLayout>
 

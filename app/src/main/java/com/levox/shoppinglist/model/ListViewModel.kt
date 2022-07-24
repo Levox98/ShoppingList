@@ -16,20 +16,14 @@ class ListViewModel : ViewModel() {
         Log.d("MODEL", "Model initialized")
     }
 
-    private fun fillTestList() {
-        DataSource.itemList.forEach {
-            _listOfItems.add(it)
-        }
-    }
-
     fun addItemToList(item: Item) {
         _listOfItems.add(item)
 
         Log.d("MODEL", "Item ${item.name} added")
     }
 
-    fun removeItemFromList(item: Item) {
-        _listOfItems.remove(item)
+    fun removeItemFromList(position: Int) {
+        _listOfItems.removeAt(position)
     }
 
     fun clearList() {
