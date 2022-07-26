@@ -22,33 +22,126 @@
         android:layout_height="match_parent"
         tools:context=".fragments.ChooseCategoryFragment">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="16dp">
 
-            <Button
-                android:id="@+id/btn_test_category"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/btn_test_category_2"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginEnd="16dp"
-                android:text="Жопки"
-                android:onClick='@{() -> chooseCategoryFragment.chooseCategory("Жопки")}'/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <Button
-                android:id="@+id/btn_test_category_2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@id/btn_test_category"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/btn_test_category"
-                app:layout_constraintBottom_toBottomOf="@+id/btn_test_category"
-                android:text="Пипки"
-                android:onClick='@{() -> chooseCategoryFragment.chooseCategory("Пипки")}'/>
+                <Button
+                    android:id="@+id/btn_ctg_meat"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@string/ctg_meat"
+                    android:onClick='@{() -> chooseCategoryFragment.chooseCategory(@string/ctg_meat)}'/>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <Button
+                    android:id="@+id/btn_ctg_fruit_and_vegetables"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_ctg_meat"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@string/ctg_fruit_and_vegetables"
+                    android:onClick='@{() -> chooseCategoryFragment.chooseCategory(@string/ctg_fruit_and_vegetables)}'/>
+
+                <Button
+                    android:id="@+id/btn_ctg_sweets"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_ctg_fruit_and_vegetables"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@string/ctg_sweets"
+                    android:onClick='@{() -> chooseCategoryFragment.chooseCategory(@string/ctg_sweets)}' />
+
+                <Button
+                    android:id="@+id/btn_ctg_coffee_tea"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_ctg_sweets"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@string/ctg_coffee_tea"
+                    android:onClick='@{() -> chooseCategoryFragment.chooseCategory(@string/ctg_coffee_tea)}' />
+
+                <Button
+                    android:id="@+id/btn_ctg_groceries"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_ctg_coffee_tea"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@string/ctg_groceries"
+                    android:onClick='@{() -> chooseCategoryFragment.chooseCategory(@string/ctg_groceries)}' />
+
+                <Button
+                    android:id="@+id/btn_ctg_frozen"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_ctg_groceries"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@string/ctg_frozen"
+                    android:onClick='@{() -> chooseCategoryFragment.chooseCategory(@string/ctg_frozen)}' />
+
+                <Button
+                    android:id="@+id/btn_ctg_dairy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_ctg_frozen"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@string/ctg_dairy"
+                    android:onClick='@{() -> chooseCategoryFragment.chooseCategory(@string/ctg_dairy)}' />
+
+                <Button
+                    android:id="@+id/btn_ctg_sea_products"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_ctg_dairy"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@string/ctg_sea_products"
+                    android:onClick='@{() -> chooseCategoryFragment.chooseCategory(@string/ctg_sea_products)}' />
+
+                <Button
+                    android:id="@+id/btn_ctg_bread"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_ctg_sea_products"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@string/ctg_bread"
+                    android:onClick='@{() -> chooseCategoryFragment.chooseCategory(@string/ctg_bread)}' />
+
+                <Button
+                    android:id="@+id/btn_ctg_drinks"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_ctg_bread"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@string/ctg_drinks"
+                    android:onClick='@{() -> chooseCategoryFragment.chooseCategory(@string/ctg_drinks)}' />
+
+                <Button
+                    android:id="@+id/btn_ctg_chemistry"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_ctg_drinks"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="@string/ctg_chemistry"
+                    android:onClick='@{() -> chooseCategoryFragment.chooseCategory(@string/ctg_chemistry)}' />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
     </FrameLayout>
 </layout>

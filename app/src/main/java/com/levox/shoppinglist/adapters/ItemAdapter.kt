@@ -15,6 +15,7 @@ class ItemAdapter(viewModel: ListViewModel) : RecyclerView.Adapter<ItemAdapter.I
     class ItemViewHolder(binding: ItemInListLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
 
         private val tvName = binding.itemName
+        private val cbGot = binding.itemCheckbox
         private val btnRemoveItem = binding.itemDelete
 
         fun bindText(item: Item) {

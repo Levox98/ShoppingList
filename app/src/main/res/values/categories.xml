@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ctg_meat">Мясо, птица, колбаса</string>
+    <string name="ctg_fruit_and_vegetables">Фрукты, овощи</string>
+    <string name="ctg_sweets">Кондитерские изделия</string>
+    <string name="ctg_coffee_tea">Чай, кофе, какао</string>
+    <string name="ctg_groceries">Бакалея</string>
+    <string name="ctg_frozen">Замороженая продукция</string>
+    <string name="ctg_dairy">Молоко, сыр, яйцо</string>
+    <string name="ctg_sea_products">Рыба и морепродукты</string>
+    <string name="ctg_bread">Хлеб и хлебобулочные изделия</string>
+    <string name="ctg_drinks">Безалкогольные напитки</string>
+    <string name="ctg_chemistry">Бытовая химия</string>
+</resources>

@@ -9,9 +9,11 @@
         <entry key="..\:/GitHub/ShoppingList/app/src/main/res/layout/item_layout.xml" value="0.358695652173913" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18568840579710144" />
         <entry key="app/src/main/res/layout/fragment_add_item.xml" value="0.18568840579710144" />
-        <entry key="app/src/main/res/layout/fragment_choose_category.xml" value="0.22536736087522644" />
+        <entry key="app/src/main/res/layout/fragment_choose_category.xml" value="0.2680816650390625" />
         <entry key="app/src/main/res/layout/fragment_create_new_list.xml" value="0.18568840579710144" />
         <entry key="app/src/main/res/layout/fragment_start.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/item_in_category_layout.xml" value="0.2210144927536232" />
+        <entry key="app/src/main/res/layout/item_in_list_layout.xml" value="0.2210144927536232" />
         <entry key="app/src/main/res/layout/item_layout.xml" value="0.19001617431640627" />
         <entry key="app/src/main/res/layout/test_rv_layout.xml" value="0.18568840579710144" />
       </map>

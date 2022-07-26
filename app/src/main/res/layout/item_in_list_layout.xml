@@ -7,54 +7,50 @@
     android:backgroundTint="#B8C3C2"
     android:layout_marginVertical="4dp">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:weightSum="10">
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/item_image"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_gravity="start"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:padding="16dp"
             app:srcCompat="@android:drawable/ic_menu_gallery" />
 
         <TextView
             android:id="@+id/item_name"
-            style="?attr/textAppearanceHeadline6"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/item_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:gravity="center"
             android:text="@string/placeholder" />
-
-        <TextView
-            android:id="@+id/item_quantity"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:gravity="center"
-            android:padding="16dp"
-            android:text="@string/placeholder_number" />
 
         <CheckBox
             android:id="@+id/item_checkbox"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/item_delete"
             android:checked="false" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/item_delete"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="16dp"
             android:layout_gravity="center"
-            android:layout_weight="5"
             android:src="@drawable/ic_delete"
             android:contentDescription="@string/delete_item_from_list"/>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

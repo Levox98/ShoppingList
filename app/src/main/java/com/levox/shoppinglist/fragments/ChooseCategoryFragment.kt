@@ -39,7 +39,6 @@ class ChooseCategoryFragment : Fragment() {
             viewModel = sharedViewModel
             dataSource = DataSource
         }
-
     }
 
     fun chooseCategory(category: String) {
